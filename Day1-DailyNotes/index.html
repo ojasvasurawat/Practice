@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Notes</title>
+</head>
+<body>
+    <h1>Daily Notes</h1>
+    <div id="alert_box"></div>
+    <input type="text" placeholder="Write your note" id="note">
+    <button onclick="addNote()" id="add_button">Add note</button>
+    <div id="notes">
+        <div>You'r notes</div>
+    </div>
+
+
+
+    <script>
+
+        
+
+        let id = 1;
+        async function addNote(){
+            const text_input = document.getElementById("note");
+            text = text_input.value;
+            console.log(text);
+            if(text === ""){
+                const alert_box = document.getElementById("alert_box");
+                alert_box.innerText = "enter something";
+                console.log("before");
+                await new Promise(resolve => setTimeout(resolve, 3000));
+                console.log("after");
+                alert_box.innerText = "";
+            }
+            else{
+                const parent = document.getElementById("notes");
+                const child = document.createElement("div");
+                // child.innerText = "hello there";
+                child.id = `note${id}`;
+                child.innerHTML = `<h1>${text}</h1> <button onclick="deleteNote(${id})">delete note</button>`;
+                parent.appendChild(child);
+                localStorage.setItem(id, text);
+                console.log(child.id);
+                id++;
+                text_input.value="";
+            }
+        }
+
+        function deleteNote(id){
+            const parent = document.getElementById("notes");
+            const child = document.getElementById(`note${id}`);
+            parent.removeChild(child);
+        }
+    </script>
+</body>
+</html>
