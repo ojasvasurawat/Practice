@@ -4,20 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daily Notes</title>
+    <link href="style.css" rel="stylesheet" />
 </head>
 <body>
-    <h1>Daily Notes</h1>
+    <h1 id="heading">Daily Notes</h1>
     <div id="alert_box"></div>
-    <input type="text" placeholder="Write your note" id="note">
-    <button onclick="addNote()" id="add_button">Add note</button>
-    <div id="notes">
-        <div>You'r notes</div>
+    <div id="note_box">
+        <div id="notes">
+            <div>You'r notes</div>
+        </div>
     </div>
+    <div id="input_div">
+        <input type="text" placeholder="" id="note">
+        <button onclick="addNote()" id="add_button">Add note</button>
+    </div>
+    
 
 
 
     <script>
 
+        window.addEventListener("load", startFunc);
+
+        function startFunc(){
+
+        }
         
 
         let id = 1;
@@ -38,7 +49,9 @@
                 const child = document.createElement("div");
                 // child.innerText = "hello there";
                 child.id = `note${id}`;
-                child.innerHTML = `<h1>${text}</h1> <button onclick="deleteNote(${id})">delete note</button>`;
+                child.className = "all_note"
+                child.innerHTML = `<p>${text}</p>
+                                    <button onclick="deleteNote(${id})" class="delete_button">delete note</button>`;
                 parent.appendChild(child);
                 localStorage.setItem(id, text);
                 console.log(child.id);

@@ -1,0 +1,48 @@
+body{
+    background-color: aqua;
+}
+
+#heading{
+    display: flex;
+    justify-content: center;
+}
+
+#input_div{
+    display: flex;
+    justify-content: center;
+}
+
+#note{
+    /* margin: 2px; */
+    background-color: aqua;
+    border: none;
+    height:4vh;
+    width: 65vw;
+    overflow-x: scroll;
+    overflow-y: scroll;
+}
+
+#add_button{
+    height: 30px;
+}
+
+#alert_box{
+    display: flex;
+    justify-content: center;
+}
+
+#note_box{
+    display: flex;
+    justify-content: center;
+}
+
+.all_note{
+    display: flex;
+    width: 65vw;
+}
+
+p{
+    width: 65vw;
+    margin-top: 0;
+    margin-bottom: 0;
+}
