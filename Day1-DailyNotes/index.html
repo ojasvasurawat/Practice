@@ -26,14 +26,35 @@
 
         const now = Date();
 
-        window.addEventListener("load", startFunc);
+        let id = -1;
 
-        function startFunc(){
+        window.onload = function(){
+            let i = 1;
+            // const data = localStorage.getItem(i);
+            while(localStorage.getItem(i) !== null){
+                const data = localStorage.getItem(i).split(",")
+                // console.log(data);
 
+
+                const parent = document.getElementById("notes");
+                const child = document.createElement("div");
+                // child.innerText = "hello there";
+                child.id = `note${i}`;
+                child.className = "all_note"
+                child.innerHTML = `<p>${data[0]}</p>
+                                    <p>created at: ${data[1]}</p>
+                                    <button onclick="deleteNote(${i})" class=" ">delete note</button>`;
+                parent.appendChild(child);
+                
+
+
+                i++;
+            }
+            id = i;
         }
         
 
-        let id = 1;
+        
         async function addNote(){
             const text_input = document.getElementById("note");
             text = text_input.value;
@@ -56,7 +77,7 @@
                                     <p>created at: ${now}</p>
                                     <button onclick="deleteNote(${id})" class=" ">delete note</button>`;
                 parent.appendChild(child);
-                localStorage.setItem(id, text);
+                localStorage.setItem(id, [text, now]);
                 console.log(child.id);
                 id++;
                 text_input.value="";
@@ -67,6 +88,21 @@
             const parent = document.getElementById("notes");
             const child = document.getElementById(`note${id}`);
             parent.removeChild(child);
+
+            let i = 1;
+            // const data = localStorage.getItem(i);
+            while(localStorage.getItem(i) !== null){
+                const data = localStorage.getItem(i).split(",")
+                console.log(data);
+                if(i === id){
+                    localStorage.removeItem(id);
+                    // break;
+                }
+                if(i>id){
+                    localStorage.setItem(i-1, localStorage.getItem(i))
+                }
+                i++;
+            }
         }
     </script>
 </body>
