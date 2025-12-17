@@ -18,8 +18,10 @@ body{
     border: none;
     height:4vh;
     width: 65vw;
-    overflow-x: scroll;
+    /* overflow-x: scroll; */
     overflow-y: scroll;
+    border: 2px solid rgb(0, 175, 175);
+    border-radius: 8px;
 }
 
 #add_button{
@@ -34,15 +36,28 @@ body{
 #note_box{
     display: flex;
     justify-content: center;
+    height: 75vh;
+    overflow-y: scroll;
 }
 
 .all_note{
     display: flex;
     width: 65vw;
+    margin: 5px;
 }
 
 p{
     width: 65vw;
+    height: 5vh;
+    overflow-y: scroll;
     margin-top: 0;
     margin-bottom: 0;
+}
+
+button{
+    text-align: center;
+    font-size: small;
+    cursor: pointer;
+    border-radius: 8px;
+    height: 5vh;
 }

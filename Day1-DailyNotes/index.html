@@ -15,7 +15,7 @@
         </div>
     </div>
     <div id="input_div">
-        <input type="text" placeholder="" id="note">
+        <input type="text" placeholder="Enter your note" id="note">
         <button onclick="addNote()" id="add_button">Add note</button>
     </div>
     
@@ -53,6 +53,14 @@
             id = i;
         }
         
+
+        document.getElementById("note").addEventListener("keydown", function(event){
+            if(event.key === "Enter"){
+                event.preventDefault;
+
+                addNote();
+            }
+        })
 
         
         async function addNote(){
@@ -103,6 +111,7 @@
                 }
                 i++;
             }
+            localStorage.removeItem(i-1);
         }
     </script>
 </body>
