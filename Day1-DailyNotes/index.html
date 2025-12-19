@@ -67,7 +67,16 @@
             const text_input = document.getElementById("note");
             text = text_input.value;
             console.log(text);
-            if(text === ""){
+            console.log(text.length);
+            if(text.length > 200){
+                const alert_box = document.getElementById("alert_box");
+                alert_box.innerText = "to long text";
+                console.log("before");
+                await new Promise(resolve => setTimeout(resolve, 3000));
+                console.log("after");
+                alert_box.innerText = "";
+            }
+            else if(text === ""){
                 const alert_box = document.getElementById("alert_box");
                 alert_box.innerText = "enter something";
                 console.log("before");
