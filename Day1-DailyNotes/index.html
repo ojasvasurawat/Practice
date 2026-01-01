@@ -91,11 +91,15 @@
                 child.id = `note${id}`;
                 child.className = "all_note"
                 child.innerHTML = `<p>${text}</p>
-                                    <p>created at: ${now}</p>
+                                    <p>created at: ${now.slice(0,15)}</p>
+                                    <p>time: ${now.slice(16,21)}</p>
                                     <button onclick="deleteNote(${id})" class=" ">delete note</button>`;
                 parent.appendChild(child);
                 localStorage.setItem(id, [text, now]);
                 console.log(child.id);
+                console.log(now);
+                console.log(now.slice(0,15));
+                
                 id++;
                 text_input.value="";
             }
