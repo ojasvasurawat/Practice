@@ -42,7 +42,8 @@
                 child.id = `note${i}`;
                 child.className = "all_note"
                 child.innerHTML = `<p>${data[0]}</p>
-                                    <p>created at: ${data[1]}</p>
+                                    <p>created at: ${data[1].slice(0,15)}</p>
+                                    <p>time: ${data[1].slice(16,21)}</p>
                                     <button onclick="deleteNote(${i})" class=" ">delete note</button>`;
                 parent.appendChild(child);
                 
