@@ -31,6 +31,8 @@ body{
 #alert_box{
     display: flex;
     justify-content: center;
+    align-items: center;
+    margin-left: 37vw;
 }
 
 #note_box{

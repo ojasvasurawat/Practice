@@ -71,19 +71,53 @@
             console.log(text.length);
             if(text.length > 200){
                 const alert_box = document.getElementById("alert_box");
+                Object.assign(alert_box.style, {
+                    border: '2px solid rgb(0, 175, 175)',
+                    height: '4vh',
+                    width: '25vw',
+                    borderRadius: '8px',
+                    color: 'red',    
+                    fontSize: '2vw',
+                    
+                });
                 alert_box.innerText = "to long text";
                 console.log("before");
                 await new Promise(resolve => setTimeout(resolve, 3000));
                 console.log("after");
                 alert_box.innerText = "";
+                Object.assign(alert_box.style, {
+                    border: '',
+                    height: '',
+                    width: '',
+                    borderRadius: '',
+                    color: '',
+                    fontSize: ''
+                });
             }
             else if(text === ""){
                 const alert_box = document.getElementById("alert_box");
+                Object.assign(alert_box.style, {
+                    border: '2px solid rgb(0, 175, 175)',
+                    height: '4vh',
+                    width: '25vw',
+                    borderRadius: '8px',
+                    color: 'red',    
+                    fontSize: '2vw',
+                    
+                });
                 alert_box.innerText = "enter something";
                 console.log("before");
                 await new Promise(resolve => setTimeout(resolve, 3000));
                 console.log("after");
                 alert_box.innerText = "";
+                Object.assign(alert_box.style, {
+                    border: '',
+                    height: '',
+                    width: '',
+                    borderRadius: '',
+                    color: '',
+                    fontSize: ''
+                });
             }
             else{
                 const parent = document.getElementById("notes");
