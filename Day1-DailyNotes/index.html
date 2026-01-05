@@ -41,10 +41,14 @@
                 // child.innerText = "hello there";
                 child.id = `note${i}`;
                 child.className = "all_note"
-                child.innerHTML = `<p>${data[0]}</p>
-                                    <p>created at: ${data[1].slice(0,15)}</p>
-                                    <p>time: ${data[1].slice(16,21)}</p>
-                                    <button onclick="deleteNote(${i})" class=" ">delete note</button>`;
+                child.innerHTML = ` <div class="note_data">
+                                        <p class="note_text">${data[0]}</p>
+                                        <div class="date_time">
+                                            <p>created at: ${data[1].slice(0,15)}</p>
+                                            <p>time: ${data[1].slice(16,21)}</p>
+                                        <div>
+                                    </div>
+                                    <button onclick="deleteNote(${i})" class="delet_button">delete note</button>`;
                 parent.appendChild(child);
                 
 
@@ -77,7 +81,7 @@
                     width: '25vw',
                     borderRadius: '8px',
                     color: 'red',    
-                    fontSize: '2vw',
+                    fontSize: '0.9rem',
                     
                 });
                 alert_box.innerText = "to long text";
@@ -102,7 +106,7 @@
                     width: '25vw',
                     borderRadius: '8px',
                     color: 'red',    
-                    fontSize: '2vw',
+                    fontSize: '0.9rem',
                     
                 });
                 alert_box.innerText = "enter something";
@@ -125,10 +129,14 @@
                 // child.innerText = "hello there";
                 child.id = `note${id}`;
                 child.className = "all_note"
-                child.innerHTML = `<p>${text}</p>
-                                    <p>created at: ${now.slice(0,15)}</p>
-                                    <p>time: ${now.slice(16,21)}</p>
-                                    <button onclick="deleteNote(${id})" class=" ">delete note</button>`;
+                child.innerHTML = `<div class="note_data">
+                                        <p class="note_text">${text}</p>
+                                        <div class="date_time">
+                                            <p>created at: ${now.slice(0,15)}</p>
+                                            <p>time: ${now.slice(16,21)}</p>
+                                        </div>
+                                    </div>
+                                    <button onclick="deleteNote(${id})" class="delet_button">delete note</button>`;
                 parent.appendChild(child);
                 localStorage.setItem(id, [text, now]);
                 console.log(child.id);
