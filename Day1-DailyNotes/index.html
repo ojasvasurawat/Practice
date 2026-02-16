@@ -7,11 +7,12 @@
     <link href="style.css" rel="stylesheet" />
 </head>
 <body>
-    <h1 id="heading" style="margin-left: auto; margin-right: auto">Daily Notes</h1>
+    <h1 id="heading">Daily Notes</h1>
     <div id="alert_box"></div>
+    <h3 id="sub-heading">You'r notes</h3>
     <div id="note_box">
         <div id="notes">
-            <div>You'r notes </div>
+
         </div>
     </div>
     <div id="input_div">
@@ -39,16 +40,16 @@
                 const parent = document.getElementById("notes");
                 const child = document.createElement("div");
                 // child.innerText = "hello there";
-                child.id = `note${i}`;
+                child.id = `note${id}`;
                 child.className = "all_note"
-                child.innerHTML = ` <div class="note_data">
+                child.innerHTML = `<div class="note_data">
                                         <p class="note_text">${data[0]}</p>
                                         <div class="date_time">
-                                            <p>created at: ${data[1].slice(0,15)}</p>
-                                            <p>time: ${data[1].slice(16,21)}</p>
-                                        <div>
+                                            <p>created at: ${now.slice(0,15)}</p>
+                                            <p>time: ${now.slice(16,21)}</p>
+                                        </div>
                                     </div>
-                                    <button onclick="deleteNote(${i})" class="delet_button">delete note</button>`;
+                                    <button onclick="deleteNote(${id})" class="delet_button">delete note</button>`;
                 parent.appendChild(child);
                 
 

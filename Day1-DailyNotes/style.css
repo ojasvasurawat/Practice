@@ -1,10 +1,15 @@
-body{
-    background-color: aqua;
-}
+
 
 #heading{
     display: flex;
     justify-content: center;
+    color: rgb(0, 117, 117);
+}
+
+#sub-heading{
+    display: flex;
+    justify-content: center;
+    color: rgb(0, 117, 117);
 }
 
 #input_div{
@@ -14,7 +19,7 @@ body{
 }
 
 #note{
-    background-color: aqua;
+    
     border: none;
     height:4vh;
     width: 65vw;
@@ -55,6 +60,7 @@ body{
 .note_data{
     display: flex;
     flex-direction: column;
+    background-color: aqua;
     border: 2px solid rgb(0, 175, 175);
     border-radius: 4px;
     padding: 4px;
