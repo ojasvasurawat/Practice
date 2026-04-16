@@ -1,15 +1,44 @@
 
+body{
+    animation: myAnimation1;
+    animation-duration: 30s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes myAnimation1{
+    0%   {background-color: red;}
+    5%  {background-color: orange;}
+    10%  {background-color: yellow;}
+    15%  {background-color: yellowgreen;}
+    20%  {background-color: lightgreen;}
+    25%  {background-color: green;}
+    30%  {background-color: lightgreen;}
+    35%  {background-color: rgb(120, 197, 223);}
+    40%  {background-color:rgb(41, 162, 210);}
+    45%  {background-color: rgb(39, 39, 236);}
+    50%  {background-color: blueviolet;}
+    55%  {background-color: purple;}
+    60%  {background-color: violet;}
+    65%  {background-color: lightpink;}
+    70%  {background-color: pink;}
+    75% {background-color: rgb(251, 144, 162);}
+    80% {background-color: rgb(255, 106, 131);}
+    85% {background-color: rgb(255, 61, 93);}
+    90% {background-color: rgb(255, 20, 59);}
+    95% {background-color: rgb(255, 0, 43);}
+    100% {background-color: rgb(255, 0, 10);}
+}
 
 #heading{
     display: flex;
     justify-content: center;
-    color: rgb(0, 117, 117);
+    color: black;
 }
 
 #sub-heading{
     display: flex;
     justify-content: center;
-    color: rgb(0, 117, 117);
+    color: black;
 }
 
 #input_div{
@@ -24,15 +53,15 @@
     height:4vh;
     width: 65vw;
     overflow-y: scroll;
-    border: 2px solid rgb(0, 175, 175);
+    border: 2px solid black;
     border-radius: 8px;
 }
 
 #add_button{
     height: 30px;
-    border: 2px solid rgb(0, 175, 175);
+    border: 2px solid black;
     border-radius: 4px;
-    box-shadow: 5px 3px 5px rgb(0, 175, 175);
+    box-shadow: 5px 3px 5px gray;
 }
 
 #alert_box{
@@ -60,20 +89,52 @@
 .note_data{
     display: flex;
     flex-direction: column;
-    background-color: aqua;
-    border: 2px solid rgb(0, 175, 175);
+    border: 2px solid black;
     border-radius: 4px;
     padding: 4px;
-    box-shadow: 5px 3px 5px rgb(0, 175, 175);
+    box-shadow: 5px 3px 5px gray;
+
+    animation: myAnimation2;
+    animation-duration: 30s;
+    animation-iteration-count: infinite; 
 }
 
+
+@keyframes myAnimation2{
+    0%   {background-color:  blueviolet;}
+    5%  {background-color:  purple;}
+    10%  {background-color: violet;}
+    15%  {background-color: lightpink;}
+    20%  {background-color: pink;}
+    25%  {background-color: rgb(251, 144, 162);}
+    30%  {background-color: rgb(255, 106, 131);}
+    35%  {background-color: rgb(255, 61, 93);}
+    40%  {background-color: rgb(255, 20, 59);}
+    45%  {background-color: rgb(255, 0, 43);}
+    50%  {background-color: red;}
+    55%  {background-color:  orange;}
+    60%  {background-color: yellow ;}
+    65%  {background-color: yellowgreen ;}
+    70%  {background-color:  lightgreen;}
+    75% {background-color:  green;}
+    80% {background-color:  lightgreen;}
+    85% {background-color:  rgb(120, 197, 223);}
+    90% {background-color:  rgb(41, 162, 210);}
+    95% {background-color:  rgb(39, 39, 236);}
+    100% {background-color: rgb(132, 0, 255);}
+}
+
+
+
+
 .delet_button{
-    border: 2px solid rgb(0, 175, 175);
+    border: 2px solid black;
     border-radius: 4px;
-    box-shadow: 5px 3px 5px rgb(0, 175, 175);
+    box-shadow: 5px 3px 5px grey;
 }
 
 .note_text{
+    margin: 4px;
     white-space: normal;
     overflow-wrap: break-word;
     word-wrap: break-word;

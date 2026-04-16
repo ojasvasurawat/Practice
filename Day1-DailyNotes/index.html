@@ -34,7 +34,7 @@
             // const data = localStorage.getItem(i);
             while(localStorage.getItem(i) !== null){
                 const data = localStorage.getItem(i).split(",")
-                // console.log(data);
+                console.log(data);
 
 
                 const parent = document.getElementById("notes");
@@ -45,8 +45,8 @@
                 child.innerHTML = `<div class="note_data">
                                         <p class="note_text">${data[0]}</p>
                                         <div class="date_time">
-                                            <p>created at: ${now.slice(0,15)}</p>
-                                            <p>time: ${now.slice(16,21)}</p>
+                                            <p>created at: ${data[1].slice(0,15)}</p>
+                                            <p>time: ${data[1].slice(16,21)}</p>
                                         </div>
                                     </div>
                                     <button onclick="deleteNote(${id})" class="delet_button">delete note</button>`;
@@ -72,6 +72,7 @@
         async function addNote(){
             const text_input = document.getElementById("note");
             text = text_input.value;
+            text = text.trim();
             console.log(text);
             console.log(text.length);
             if(text.length > 200){
